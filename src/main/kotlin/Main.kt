@@ -13,8 +13,8 @@ enum class ANSIColor(val escapeSequence: String) {
 
 fun wordCheck(word: String, answer: String): Array<Valid>{
     val checkArray: Array<Valid> = Array(word.length){Valid.GRAY}
-    for (i in 0 until word.length){
-        for (j in 0 until word.length){
+    for (i in word.indices){
+        for (j in word.indices){
             if (word[i] == answer[j]){
                 if (i == j){
                     checkArray[i] = Valid.GREEN
@@ -46,7 +46,7 @@ fun main() {
     var checkArray: Array<Valid>
     val message = "${answer.length}文字の枕詞を「ひらがな」で入力してください。"
     println(message)
-    println("7回までトライできます。")
+    println("${canTry}回までトライできます。")
     for ( i in 0 until canTry ){
         print("> ")
         var word = readLine()
