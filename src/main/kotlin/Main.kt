@@ -44,8 +44,9 @@ fun main() {
     var cleared = false
     val answer = makurakotoba[SecureRandom().nextInt(makurakotoba.size)]
     var checkArray: Array<Valid>
-    val message = "${answer.length}文字の枕詞を入力してください。"
+    val message = "${answer.length}文字の枕詞を「ひらがな」で入力してください。"
     println(message)
+    println("7回までトライできます。")
     for ( i in 0 until canTry ){
         print("> ")
         var word = readLine()
